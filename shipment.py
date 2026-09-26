@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 
 def compute_status(delay_days: int) -> str:
+    """Classify a shipment's delay in days into on_time, minor_delay, or major_delay."""
     if delay_days == 0:
         return 'on_time'
     elif delay_days <= 2:
